@@ -3,9 +3,11 @@ image:
 
 replicaCount: 3
 
-
 deployment:
   name: helm-deployment-prod-us
   label: helm-prod-us
   container: 
     name: helm-prod-us
+
+service: 
+  name: helm-service-prod-us

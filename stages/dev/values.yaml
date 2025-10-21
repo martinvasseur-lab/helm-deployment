@@ -8,3 +8,6 @@ deployment:
   label: helm-dev
   container: 
     name: helm-dev
+
+service: 
+  name: helm-service-dev

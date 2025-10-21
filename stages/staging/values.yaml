@@ -9,3 +9,6 @@ deployment:
   label: helm-staging
   container: 
     name: helm-staging
+
+service: 
+  name: helm-service-staging

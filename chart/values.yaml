@@ -12,6 +12,7 @@ deployment:
     name: helm
 
 service:
+  name: helm-service
   type: ClusterIP
   port: 3000
 

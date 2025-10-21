@@ -9,3 +9,6 @@ deployment:
   label: helm-qara
   container: 
     name: helm-qara
+
+service: 
+  name: helm-service-qara

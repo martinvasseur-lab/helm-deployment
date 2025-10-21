@@ -8,3 +8,6 @@ deployment:
   label: helm-prod-eu
   container: 
     name: helm-prod-eu
+
+service: 
+  name: helm-service-prod-eu
