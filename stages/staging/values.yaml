@@ -1,4 +1,11 @@
 image:
   tag: 1.0.0
 
-replicaCount: 3
+replicaCount: 2
+
+
+deployment:
+  name: helm-deployment-staging
+  label: helm-staging
+  container: 
+    name: helm-staging

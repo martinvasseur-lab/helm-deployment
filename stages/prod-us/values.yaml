@@ -2,3 +2,10 @@ image:
   tag: 1.0.0
 
 replicaCount: 3
+
+
+deployment:
+  name: helm-deployment-prod-us
+  label: helm-prod-us
+  container: 
+    name: helm-prod-us

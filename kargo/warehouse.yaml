@@ -2,11 +2,11 @@ apiVersion: kargo.akuity.io/v1alpha1
 kind: Warehouse
 metadata:
   name: warehouse
-  namespace: kargo-project
+  namespace: helm-project
 spec:
   subscriptions:
   - image:
-      repoURL: ghcr.io/martinvasseur-lab/kargo
+      repoURL: ghcr.io/martinvasseur-lab/helm-deployment
       constraint: ^1.x
   - git:
-      repoURL: https://github.com/martinvasseur-lab/kargo.git
+      repoURL: https://github.com/martinvasseur-lab/helm-deployment.git
