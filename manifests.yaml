@@ -18,6 +18,6 @@ spec:
     spec:
       containers:
       - name: helm-dev
-        iamge: ghcr.io/martinvasseur-lab/helm-deployment:1.0.0
+        image: ghcr.io/martinvasseur-lab/helm-deployment:1.0.0
         ports:
         - containerPort: 3000
