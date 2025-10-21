@@ -1,4 +1,18 @@
 ---
+# Source: helm/templates/service.yaml
+apiVersion: apps/v1
+kind: Service
+metadata:
+  name: helm-service-dev
+spec: 
+  type: ClusterIP
+  selector:
+    app: helm-dev
+  ports:
+  - protocol: TCP
+    port: 3000
+    targetPort: 3000
+---
 # Source: helm/templates/deployment.yaml
 apiVersion: apps/v1
 kind: Deployment
