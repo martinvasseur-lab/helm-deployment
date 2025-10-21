@@ -1,0 +1,24 @@
+---
+apiVersion: kargo.akuity.io/v1alpha1
+kind: Project
+metadata:
+   name: helm-project
+---
+apiVersion: kargo.akuity.io/v1alpha1
+kind: ProjectConfig
+metadata:
+  name: helm-project
+  namespace: helm-project
+spec:
+  promotionPolicies:
+  - stageSelector:
+      name: dev
+    autoPromotionEnabled: true
+  promotionPolicies:
+  - stageSelector:
+      matchExpressions:
+      - key: environment
+        operator: In
+        values: ["qara", "staging","prod-eu","prod-us"]
+    autoPromotionEnabled: false
+  

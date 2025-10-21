@@ -1,0 +1,33 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: helm-project
+  namespace: argocd
+spec:
+  description: Project for dev, staging, prod-eu, and prod-us apps
+
+  sourceRepos:
+    - https://github.com/martinvasseur-lab/helm-deployment # allowlist of repos
+
+  destinations:
+    - namespace: '*'
+      server: https://kubernetes.default.svc  # allow all clusters/namespaces
+
+  clusterResourceWhitelist:
+    - group: '*'
+      kind: '*'
+
+  namespaceResourceWhitelist:
+    - group: '*'
+      kind: '*'
+
+  orphanedResources:
+    warn: true
+
+  roles:
+    - name: read-only
+      description: Read-only access to this project
+      policies:
+        - p, proj:my-project:read-only, applications, get, my-project/*, allow
+      groups:
+        - my-org:readers

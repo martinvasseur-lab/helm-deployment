@@ -1,0 +1,12 @@
+apiVersion: kargo.akuity.io/v1alpha1
+kind: Warehouse
+metadata:
+  name: warehouse
+  namespace: kargo-project
+spec:
+  subscriptions:
+  - image:
+      repoURL: ghcr.io/martinvasseur-lab/kargo
+      constraint: ^1.x
+  - git:
+      repoURL: https://github.com/martinvasseur-lab/kargo.git

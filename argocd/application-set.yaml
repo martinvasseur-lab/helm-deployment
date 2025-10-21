@@ -1,0 +1,32 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: helm-applicationset
+  namespace: argocd
+spec:
+  generators:
+    - list:
+        elements:
+          - env: dev
+          - env: qara
+          - env: staging
+          - env: prod-eu
+          - env: prod-us
+  template:
+    metadata:
+      name: helm-{{ env }}
+      annotations:
+        kargo.akuity.io/authorized-stage: helm-project:{{ env }}
+    spec:
+      project: helm-project
+      source:
+        repoURL: https://github.com/martinvasseur-lab/helm-deployment
+        targetRevision: stage/{{ env }}
+        path: .
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: helm-{{ env }}
+      syncPolicy:
+        automated: {}
+        syncOptions:
+        - CreateNamespace=true
