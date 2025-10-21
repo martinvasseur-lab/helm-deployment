@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: {{ .Values.deployment.container.name }}
-        iamge: {{ include "mychart.image" }}
+        iamge: {{ include "mychart.image" . }}
         ports:
         - containerPort: {{ .Values.service.port }}
