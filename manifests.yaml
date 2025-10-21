@@ -1,0 +1,23 @@
+---
+# Source: helm/templates/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: helm-deployment-qara
+  labels:
+    app: helm-qara
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: helm-qara
+  template:
+    metadata:
+      labels:
+        app: helm-qara
+    spec:
+      containers:
+      - name: helm-qara
+        image: ghcr.io/martinvasseur-lab/helm-deployment:1.0.0
+        ports:
+        - containerPort: 3000
