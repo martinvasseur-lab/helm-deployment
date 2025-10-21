@@ -1,0 +1,23 @@
+---
+# Source: helm/templates/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: helm-deployment-dev
+  labels:
+    app: helm-dev
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: helm-dev
+  template:
+    metadata:
+      labels:
+        app: helm-dev
+    spec:
+      containers:
+      - name: helm-dev
+        iamge: ghcr.io/martinvasseur-lab/helm-deployment:1.0.0
+        ports:
+        - containerPort: 3000
