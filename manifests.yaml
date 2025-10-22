@@ -1,4 +1,18 @@
 ---
+# Source: helm/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: helm-service-qara
+spec: 
+  type: ClusterIP
+  selector:
+    app: helm-qara
+  ports:
+  - protocol: TCP
+    port: 5000
+    targetPort: 5000
+---
 # Source: helm/templates/deployment.yaml
 apiVersion: apps/v1
 kind: Deployment
@@ -20,4 +34,4 @@ spec:
       - name: helm-qara
         image: ghcr.io/martinvasseur-lab/helm-deployment:1.0.0
         ports:
-        - containerPort: 3000
+        - containerPort: 5000
