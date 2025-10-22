@@ -13,8 +13,8 @@ deployment:
 service: 
   name: helm-service-qara
 
-gateway:
-  route: 
-    name: helm-route-qara
-  reference:
-    name: helm-reference-qara
+# gateway:
+#   route: 
+#     name: helm-route-qara
+#   reference:
+#     name: helm-reference-qara

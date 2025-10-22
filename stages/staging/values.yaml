@@ -12,8 +12,8 @@ deployment:
 service: 
   name: helm-service-staging
 
-gateway:
-  route: 
-    name: helm-route-develope
-  reference:
-    name: helm-reference-qara
+# gateway:
+#   route: 
+#     name: helm-route-develope
+#   reference:
+#     name: helm-reference-qara

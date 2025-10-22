@@ -12,8 +12,8 @@ deployment:
 service: 
   name: helm-service-prod-us
 
-gateway:
-  route: 
-    name: helm-route-prod-us
-  reference:
-    name: helm-reference-prod-us
+# gateway:
+#   route: 
+#     name: helm-route-prod-us
+#   reference:
+#     name: helm-reference-prod-us

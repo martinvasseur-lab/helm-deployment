@@ -4,3 +4,4 @@ kargo/stage.yaml
 test.yaml
 tls.crt
 tls.key
+gateway-api.yaml
