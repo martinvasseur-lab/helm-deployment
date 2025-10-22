@@ -48,7 +48,7 @@ spec:
   from:
   - group: gateway.networking.k8s.io
     kind: HTTPRoute
-    namespace: {{ .Values.gateway.deployment.label }}
+    namespace: {{ .Values.deployment.label }}
   to:
   - group: gateway.networking.k8s.io
     kind: Gateway
