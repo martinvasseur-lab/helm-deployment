@@ -33,7 +33,7 @@ spec:
     - matches:
         path:
           type: PathPrefix
-          value: {{ .Values.route.path }}
+          value: {{ .Values.gateway.route.path }}
       backendRefs:
       - name: {{ .Values.service.name }}
         port: {{ .Values.service.port }}
