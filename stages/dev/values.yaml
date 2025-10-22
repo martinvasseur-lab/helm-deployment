@@ -11,3 +11,10 @@ deployment:
 
 service: 
   name: helm-service-dev
+
+
+gateway:
+  route: 
+    name: helm-route-dev
+  reference:
+    name: helm-reference-dev

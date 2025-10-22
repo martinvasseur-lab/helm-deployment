@@ -14,5 +14,16 @@ deployment:
 service:
   name: helm-service
   type: ClusterIP
-  port: 3000
+  port: 5000
+
+gateway:
+  name: helm-gateway
+  port: 80
+  class:
+    name: helm-gateway-class
+  route:
+    name: helm-route
+    path: /
+  reference:
+    name: helm-reference
 

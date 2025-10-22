@@ -3,7 +3,6 @@ image:
 
 replicaCount: 2
 
-
 deployment:
   name: helm-deployment-staging
   label: helm-staging
@@ -12,3 +11,9 @@ deployment:
 
 service: 
   name: helm-service-staging
+
+gateway:
+  route: 
+    name: helm-route-develope
+  reference:
+    name: helm-reference-qara

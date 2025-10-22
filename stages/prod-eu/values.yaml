@@ -11,3 +11,9 @@ deployment:
 
 service: 
   name: helm-service-prod-eu
+
+gateway:
+  route: 
+    name: helm-route-prod-eu
+  reference:
+    name: helm-reference-prod-eu
