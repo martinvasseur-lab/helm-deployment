@@ -2,3 +2,5 @@ kargo/stage.yaml
 .venv/
 */*/stage.yaml
 test.yaml
+tls.crt
+tls.key

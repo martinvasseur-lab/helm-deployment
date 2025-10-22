@@ -26,4 +26,37 @@ gateway:
     path: /
   reference:
     name: helm-reference
+  image:
+    repository: kong/kong-gateway
+    tag: "3.12"
+  env:
+    konnect_mode: 'on'
+    vitals: "off"
+    cluster_mtls: pki
+    cluster_telemetry_endpoint: "'$CONTROL_PLANE_TELEMETRY':443"
+    cluster_telemetry_server_name: "'$CONTROL_PLANE_TELEMETRY'"
+    cluster_cert: /etc/secrets/konnect-client-tls/tls.crt
+    cluster_cert_key: /etc/secrets/konnect-client-tls/tls.key
+    lua_ssl_trusted_certificate: system
+    proxy_access_log: "off"
+    dns_stale_ttl: "3600"
+  resources:
+    requests:
+      cpu: 1
+      memory: "2Gi"
+  secretVolumes:
+    - konnect-client-tls
 
+controller:
+  ingressController:
+    image:
+      tag: "3.5"
+    env:
+      feature_gates: "FillIDs=true"
+    konnect:
+      license:
+        enabled: true
+      enabled: true
+      controlPlaneID: 539c918e-9450-427f-9543-1f7e5f9f5ecc
+      tlsClientCertSecretName: konnect-client-tls
+      apiHostname: "us.kic.api.konghq.com"
