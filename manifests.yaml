@@ -32,6 +32,6 @@ spec:
     spec:
       containers:
       - name: helm-prod-us
-        image: ghcr.io/martinvasseur-lab/helm-deployment:1.0.1
+        image: ghcr.io/martinvasseur-lab/helm-deployment:1.0.2
         ports:
         - containerPort: 5000
